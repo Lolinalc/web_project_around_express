@@ -1,0 +1,39 @@
+{
+  "name": "web_project_around_express",
+  "version": "1.0.0",
+  "description": "Backend server for Around the US project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "lint": "npx eslint ."
+  },
+  "keywords": [
+    "express",
+    "nodejs",
+    "backend",
+    "api"
+  ],
+  "author": "Mariana Lolina Lopez Ceballos",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.32.0",
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "celebrate": "^15.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^5.1.0",
+    "express-winston": "^4.2.0",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.19.3",
+    "validator": "^13.15.23",
+    "winston": "^3.11.0"
+  }
+}

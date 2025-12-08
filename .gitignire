@@ -1,0 +1,26 @@
+# Logs
+request.log
+error.log
+*.log
+logs/
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment variables
+.env
+
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PM2
+.pm2/
