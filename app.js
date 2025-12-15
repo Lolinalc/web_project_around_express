@@ -20,8 +20,17 @@ const app = express();
 mongoose.connect(MONGODB_URI);
 
 // CORS - Permitir solicitudes del frontend
-app.use(cors());
-
+app.use(
+  cors({
+    origin: [
+      "http://lolinalc1.chickenkiller.com",
+      "http://www.lolinalc1.chickenkiller.com",
+      "https://lolinalc1.chickenkiller.com",
+      "https://www.lolinalc1.chickenkiller.com",
+    ],
+    credentials: true,
+  })
+);
 // Middleware para parsear JSON
 app.use(express.json());
 

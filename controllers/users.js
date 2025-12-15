@@ -35,6 +35,8 @@ const createUser = (req, res, next) => {
       });
     })
     .catch((err) => {
+      console.log("ERROR EN SIGNUP:", err); // ← AGREGA ESTA LÍNEA
+
       if (err.code === 11000) {
         next(new ConflictError("El email ya está registrado"));
       } else if (err.name === "ValidationError") {
