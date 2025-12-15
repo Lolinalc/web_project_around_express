@@ -12,9 +12,9 @@ const validateURL = (value, helpers) => {
 // Validación para registro de usuario
 const validateSignup = celebrate({
   body: Joi.object().keys({
-    name: Joi.string().min(2).max(30).required(),
-    about: Joi.string().min(2).max(30).required(),
-    avatar: Joi.string().required().custom(validateURL),
+    name: Joi.string().min(2).max(30).optional(),
+    about: Joi.string().min(2).max(30).optional(),
+    avatar: Joi.string().optional().custom(validateURL),
     email: Joi.string().required().email(),
     password: Joi.string().required().min(8),
   }),

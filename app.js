@@ -12,7 +12,7 @@ const NotFoundError = require("./errors/NotFoundError");
 const { validateSignup, validateSignin } = require("./middlewares/validations");
 const { requestLogger, errorLogger } = require("./middlewares/logger");
 
-const { PORT = 3000, MONGODB_URI = "mongodb://localhost:27017/aroundb" } =
+const { PORT = 3001, MONGODB_URI = "mongodb://localhost:27017/aroundb" } =
   process.env;
 const app = express();
 

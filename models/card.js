@@ -16,8 +16,7 @@ const cardSchema = new mongoose.Schema({
           /^https?:\/\/(www\.)?[a-zA-Z0-9\-._~:/?%#[\]@!$&'()*+,;=]+#?$/;
         return urlRegex.test(value);
       },
-      message:
-        "El link debe ser una URL válida que comience con http:// o https://",
+      message: "El link debe ser una URL válida",
     },
   },
   owner: {
@@ -26,8 +25,7 @@ const cardSchema = new mongoose.Schema({
     required: true,
   },
   likes: {
-    type: [mongoose.Schema.Types.ObjectId],
-    ref: "user",
+    type: [{ type: mongoose.Schema.Types.ObjectId, ref: "user" }],
     default: [],
   },
   createdAt: {
