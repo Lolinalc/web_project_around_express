@@ -10,33 +10,24 @@ const { JWT_SECRET = "default-dev-secret" } = process.env;
 
 // Crear nuevo usuario
 const createUser = (req, res, next) => {
-  const { name, about, avatar, email, password } = req.body;
+  const { email, password } = req.body;
 
-  // Hashear la contraseña
   bcrypt
     .hash(password, 10)
     .then((hash) =>
       User.create({
-        name,
-        about,
-        avatar,
         email,
-        password: hash, // Guardamos el hash
+        password: hash,
       })
     )
     .then((user) => {
-      // No devolvemos la contraseña
       res.status(201).send({
         _id: user._id,
-        name: user.name,
-        about: user.about,
-        avatar: user.avatar,
         email: user.email,
       });
     })
     .catch((err) => {
-      console.log("ERROR EN SIGNUP:", err); // ← AGREGA ESTA LÍNEA
-
+      console.log("ERROR EN SIGNUP:", err);
       if (err.code === 11000) {
         next(new ConflictError("El email ya está registrado"));
       } else if (err.name === "ValidationError") {
